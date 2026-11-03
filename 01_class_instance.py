@@ -1,20 +1,34 @@
-# 01_class_instance.py
-# Konu: Class, instance (nesne) ve class attribute / instance attribute farkı
+"""
+01_class_instance.py
+
+Topic: what a class is, how to create an instance (object), dot notation.
+- A class is a blueprint, an instance is an object built from it.
+- Dot notation (obj.name) reaches an object's attributes and methods.
+"""
+
+# --- Dot notation: even a list is an object of the built-in list class ---
+readings = []            # list sınıfından bir nesne
+readings.append(21.5)    # nokta notasyonu: nesnenin method'unu çağırır
+print(readings)          # [21.5]
+print(type(readings))    # <class 'list'>
 
 
-class Vehicle:
-    # Class attribute: bu class'tan üretilen TÜM nesneler arasında paylaşılır
-    door_number = 4
-    brand = None  # None'ı ben atıyorum, Python otomatik atamıyor
+# --- Our own class ---
+class Machine:
+    # Class attributes: tüm nesneler için ortak varsayılan değerler
+    category = "CNC"
+    power_kw = None  # None'ı biz yazıyoruz; yazmasaydık attribute hiç var olmazdı
 
 
-car1 = Vehicle()  # instance alma (nesne oluşturma)
-car2 = Vehicle()
+m1 = Machine()  # instance alma (nesne oluşturma)
+m2 = Machine()
 
-# Bu satır class'ı değil, SADECE car1'e ait yeni bir instance attribute oluşturur
-car1.brand = "Dodge"
+m1.power_kw = 7.5  # class'ı değil, SADECE m1'e ait yeni bir instance attribute oluşturur
 
-print(car1.brand)        # Dodge  -> car1'in kendi değeri
-print(car2.brand)        # None   -> class attribute'tan geliyor
-print(Vehicle.brand)     # None   -> class attribute değişmedi
-print(car2.door_number)  # 4      -> herkes paylaşır
+print(m1.category)       # CNC   -> class attribute, herkes paylaşır
+print(m1.power_kw)       # 7.5   -> m1'in kendi değeri
+print(m2.power_kw)       # None  -> m2 hâlâ class attribute'u görüyor
+print(Machine.power_kw)  # None  -> class attribute değişmedi
+
+# Hata örneği: hiç tanımlanmamış bir attribute
+# print(m1.color)  # AttributeError: 'Machine' object has no attribute 'color'
