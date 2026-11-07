@@ -11,7 +11,10 @@ exercises use industrial examples (sensors, machines).
 | `01_class_instance.py` | Class, instance, dot notation, class attributes |
 | `02_class_vs_instance_attr.py` | Class vs instance attributes, shadowing, shared list trap |
 | `03_init_self.py` | `__init__` and `self` |
-| `exercises/sensor.py` | Exercise: complete the `Sensor` class (in progress) |
+| `04_methods.py` | Methods: behavior inside a class |
+| `exercises/03_sensor.py` | Exercise: complete the `Sensor` class (in progress) |
+| `exercises/04_shapes.py` | In-class: Circle, Rectangle |
+| `exercises/04_software_developer.py` | In-class: SoftwareDeveloper, instance vs class list |
 | `notes/ram_homework.md` | Research notes: heap, stack, garbage collector |
 
 ## How to run
@@ -25,7 +28,8 @@ python 01_class_instance.py
 - [x] Class and instance
 - [x] Class vs instance attributes
 - [x] `__init__` and `self`
-- [ ] Methods and `__str__`
+- [x] Methods 
+- [ ] `__str__` and `__repr__`
 - [ ] Encapsulation
 - [ ] Inheritance
 - [ ] Polymorphism and composition
